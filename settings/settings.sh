@@ -219,7 +219,7 @@ export HAZEL_APP_NAME=Hazel.prefPane
 export HAZEL_APP_URL="http://www.noodlesoft.com/Products/Hazel/download"
 
 export TRAILER_APP_NAME=Trailer.app
-export TRAILER_APP_URL="http://ptsochantaris.github.io/trailer/trailer1317.zip"
+export TRAILER_APP_URL="http://ptsochantaris.github.io/trailer/trailer1318.zip"
 
 export RESCUE_TIME_APP_NAME=RescueTime.app
 export RESCUE_TIME_APP_URL="https://www.rescuetime.com/installers/RescueTimeInstaller.dmg"
