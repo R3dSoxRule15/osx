@@ -25,9 +25,6 @@ defaults write NSGlobalDomain NSWindowResizeTime -float 0.001
 printf "System - Disable window resume system-wide\n"
 defaults write NSGlobalDomain NSQuitAlwaysKeepsWindows -bool false
 
-printf "System - Disable auto-correct\n"
-defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
-
 printf "System - Disable smart quotes (not useful when writing code)\n"
 defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 
@@ -43,9 +40,6 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 
 printf "System - Automatically restart if system freezes\n"
 systemsetup -setrestartfreeze on
-
-printf "System - Disable software updates\n"
-sudo softwareupdate --schedule off
 
 printf "Keyboard - Automatically illuminate built-in MacBook keyboard in low light\n"
 defaults write com.apple.BezelServices kDim -bool true
@@ -101,17 +95,11 @@ defaults write com.apple.dock autohide -bool true
 printf "Dock - Remove the auto-hiding delay\n"
 defaults write com.apple.Dock autohide-delay -float 0
 
-printf "Dock - Don’t show Dashboard as a Space\n"
-defaults write com.apple.dock "dashboard-in-overlay" -bool true
-
 printf "iCloud - Save to disk by default\n"
 defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 
 printf "Finder - Show the $HOME/Library folder\n"
 chflags nohidden $HOME/Library
-
-printf "Finder - Show hidden files\n"
-defaults write com.apple.finder AppleShowAllFiles -bool true
 
 printf "Finder - Show filename extensions\n"
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
@@ -139,32 +127,6 @@ defaults write com.apple.finder WarnOnEmptyTrash -bool false
 
 printf "Finder - Allow text selection in Quick Look\n"
 defaults write com.apple.finder QLEnableTextSelection -bool true
-
-printf "iOS Simulator - Symlink the iOS Simulator application\n"
-sudo ln -sf "/Applications/Xcode.app/Contents/Applications/iPhone Simulator.app" "/Applications/iOS Simulator.app"
-
-printf "Safari - Set home page to 'about:blank' for faster loading\n"
-defaults write com.apple.Safari HomePage -string "about:blank"
-
-printf "Safari - Hide bookmarks bar\n"
-defaults write com.apple.Safari ShowFavoritesBar -bool false
-
-printf "Safari - Use Contains instead of Starts With in search banners\n"
-defaults write com.apple.Safari FindOnPageMatchesWordStartsOnly -bool false
-
-printf "Safari - Enable debug menu\n"
-defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
-
-printf "Safari - Enable the Develop menu and the Web Inspector\n"
-defaults write com.apple.Safari IncludeDevelopMenu -bool true
-defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true
-defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled -bool true
-
-printf "Safari - Add a context menu item for showing the Web Inspector in web views\n"
-defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
-
-printf "Safari - Disable sending search queries to Apple.\n"
-defaults write com.apple.Safari UniversalSearchEnabled -bool false
 
 printf "Chrome - Prevent native print dialog, use system dialog instead\n"
 defaults write com.google.Chrome DisablePrintPreview -boolean true
@@ -197,9 +159,6 @@ defaults write com.apple.TextEdit PlainTextEncodingForWrite -int 4
 printf "Disk Utility - Enable debug menu\n"
 defaults write com.apple.DiskUtility DUDebugMenuEnabled -bool true
 defaults write com.apple.DiskUtility advanced-image-options -bool true
-
-printf "Time Machine - Prevent prompting to use new hard drives as backup volume\n"
-defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 
 printf "Printer - Expand print panel by default\n"
 defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
